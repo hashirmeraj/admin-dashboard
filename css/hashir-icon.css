@@ -1,0 +1,320 @@
+@font-face {
+  font-family: 'hashir';
+  src:
+    url('fonts/hashir.ttf?nukgc0') format('truetype'),
+    url('fonts/hashir.woff?nukgc0') format('woff'),
+    url('fonts/hashir.svg?nukgc0#hashir') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'hashir' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hashir-alarm:before {
+  content: "\e900";
+}
+
+.hashir-alarm-clock:before {
+  content: "\e901";
+}
+
+.hashir-analytics:before {
+  content: "\e902";
+}
+
+.hashir-arrow-back:before {
+  content: "\e903";
+}
+
+.hashir-arrow-next:before {
+  content: "\e904";
+}
+
+.hashir-back:before {
+  content: "\e905";
+}
+
+.hashir-bar-chart:before {
+  content: "\e906";
+}
+
+.hashir-chat:before {
+  content: "\e907";
+}
+
+.hashir-close:before {
+  content: "\e908";
+}
+
+.hashir-cloud:before {
+  content: "\e909";
+}
+
+.hashir-credit-cards:before {
+  content: "\e90a";
+}
+
+.hashir-delete-button:before {
+  content: "\e90b";
+}
+
+.hashir-desktop:before {
+  content: "\e90c";
+}
+
+.hashir-diamond:before {
+  content: "\e90d";
+}
+
+.hashir-down-arrow:before {
+  content: "\e90e";
+}
+
+.hashir-download:before {
+  content: "\e90f";
+}
+
+.hashir-edit:before {
+  content: "\e910";
+}
+
+.hashir-exit:before {
+  content: "\e911";
+}
+
+.hashir-eye:before {
+  content: "\e912";
+}
+
+.hashir-facebook:before {
+  content: "\e913";
+}
+
+.hashir-favorites:before {
+  content: "\e914";
+}
+
+.hashir-favorites-button:before {
+  content: "\e915";
+}
+
+.hashir-flag:before {
+  content: "\e916";
+}
+
+.hashir-folder:before {
+  content: "\e917";
+}
+
+.hashir-forms:before {
+  content: "\e918";
+}
+
+.hashir-gear:before {
+  content: "\e919";
+}
+
+.hashir-google-plus:before {
+  content: "\e91a";
+}
+
+.hashir-half-filled-rating-star:before {
+  content: "\e91b";
+}
+
+.hashir-happiness:before {
+  content: "\e91c";
+}
+
+.hashir-home:before {
+  content: "\e91d";
+}
+
+.hashir-honeymoon:before {
+  content: "\e91e";
+}
+
+.hashir-inbox:before {
+  content: "\e91f";
+}
+
+.hashir-info:before {
+  content: "\e920";
+}
+
+.hashir-like:before {
+  content: "\e921";
+}
+
+.hashir-linkedin:before {
+  content: "\e922";
+}
+
+.hashir-mail:before {
+  content: "\e923";
+}
+
+.hashir-mastercard:before {
+  content: "\e924";
+}
+
+.hashir-menu:before {
+  content: "\e925";
+}
+
+.hashir-menu-task:before {
+  content: "\e926";
+}
+
+.hashir-new-file:before {
+  content: "\e927";
+}
+
+.hashir-next:before {
+  content: "\e928";
+}
+
+.hashir-paperclip-document-outline:before {
+  content: "\e929";
+}
+
+.hashir-paper-plane:before {
+  content: "\e92a";
+}
+
+.hashir-paypal-logo-in-rectangular-black-card:before {
+  content: "\e92b";
+}
+
+.hashir-pdf:before {
+  content: "\e92c";
+}
+
+.hashir-picture:before {
+  content: "\e92d";
+}
+
+.hashir-pie-chart:before {
+  content: "\e92e";
+}
+
+.hashir-pinterest:before {
+  content: "\e92f";
+}
+
+.hashir-placeholder:before {
+  content: "\e930";
+}
+
+.hashir-ppt:before {
+  content: "\e931";
+}
+
+.hashir-price-tag:before {
+  content: "\e932";
+}
+
+.hashir-printer:before {
+  content: "\e933";
+}
+
+.hashir-refresh-button:before {
+  content: "\e934";
+}
+
+.hashir-right-arrow-angle:before {
+  content: "\e935";
+}
+
+.hashir-rss:before {
+  content: "\e936";
+}
+
+.hashir-search:before {
+  content: "\e937";
+}
+
+.hashir-settings:before {
+  content: "\e938";
+}
+
+.hashir-share:before {
+  content: "\e939";
+}
+
+.hashir-shopping-cart:before {
+  content: "\e93a";
+}
+
+.hashir-smartphone-call:before {
+  content: "\e93b";
+}
+
+.hashir-speakers:before {
+  content: "\e93c";
+}
+
+.hashir-table:before {
+  content: "\e93d";
+}
+
+.hashir-team:before {
+  content: "\e93e";
+}
+
+.hashir-thumb-up:before {
+  content: "\e93f";
+}
+
+.hashir-tick:before {
+  content: "\e940";
+}
+
+.hashir-twitter:before {
+  content: "\e941";
+}
+
+.hashir-unlocked:before {
+  content: "\e942";
+}
+
+.hashir-upload:before {
+  content: "\e943";
+}
+
+.hashir-user:before {
+  content: "\e944";
+}
+
+.hashir-warning-sign:before {
+  content: "\e945";
+}
+
+.hashir-xls:before {
+  content: "\e946";
+}
+
+.hashir-youtube:before {
+  content: "\e947";
+}
+
+.hashir-youtube-logotype:before {
+  content: "\e948";
+}
+
+.hashir-zip:before {
+  content: "\e949";
+}
