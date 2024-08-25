@@ -91,22 +91,28 @@ if (isset($_GET['add']) && $_GET['add'] == "true") {
                             <div id="myTabContent" class="tab-content custom-product-edit">
                                 <div class="product-tab-list tab-pane fade active in" id="description">
                                     <?php
+                                    $categoryID = $_GET['cID'];
                                     if (isset($_GET['action']) && $_GET['action'] == 'edit') {
+                                        $sql = "SELECT * FROM `categories` WHERE `category_id` = '$categoryID'";
+                                        $result = mysqli_query($conn, $sql);
+                                        $row = mysqli_fetch_assoc($result);
+
+
                                         echo '
-                                            <form action="./particles/handleEditCategory.php?action=edit" method="post">
+                                            <form action="./particles/handleEditCategory.php?action=update" method="post">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <div class="review-content-section">
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon hashir-unlocked" aria-hidden="true"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Category Code" name="categoryCode" required>
+                                                        <input type="text" class="form-control" placeholder="Category Code" name="categoryCode" required value="' . $row['category_code'] . '">
                                                     </div>
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon hashir-new-file" aria-hidden="true"></i></span>
-                                                        <input type="number" class="form-control" placeholder="Total Questions" name="totalQuestions" required>
+                                                        <input type="number" class="form-control" placeholder="Total Questions" name="totalQuestions" required value="' . $row['category_question'] . '">
                                                     </div>
                                                     <select name="status" class="form-control pro-edt-select form-control-primary mg-b-pro-edt" required>
-                                                        <option value="active">Select Status</option>
+                                                        <option value="active">Change Status</option>
                                                         <option value="active">Active</option>
                                                         <option value="paused">Paused</option>
                                                         <option value="disabled">Disabled</option>
@@ -117,11 +123,11 @@ if (isset($_GET['add']) && $_GET['add'] == "true") {
                                                 <div class="review-content-section">
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon hashir-new-file" aria-hidden="true"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Category Name" name="categoryName" required>
+                                                        <input type="text" class="form-control" placeholder="Category Name" name="categoryName" required value="' . $row['category_name'] . '">
                                                     </div>
                                                     <div class="input-group mg-b-pro-edt col-lg-12">
                                                         <span class="input-group-addon"><i class="icon hashir-new-file" aria-hidden="true"></i></span>
-                                                        <input type="number" class="form-control" placeholder="Total Minutes" name="totalMinutes" required>
+                                                        <input type="number" class="form-control" placeholder="Total Minutes" name="totalMinutes" required value="' . $row['category_time'] . '">
                                                     </div>
                                                 </div>
                                             </div>
@@ -129,7 +135,7 @@ if (isset($_GET['add']) && $_GET['add'] == "true") {
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                 <div class="text-center custom-pro-edt-ds">
-                                                    <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Save</button>
+                                                    <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Update</button>
                                                     <button type="reset" class="btn btn-ctl-bt waves-effect waves-light">Discard</button>
                                                 </div>
                                             </div>
