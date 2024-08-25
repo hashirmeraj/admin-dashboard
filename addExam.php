@@ -99,7 +99,7 @@ if (isset($_GET['add']) && $_GET['add'] == "true") {
 
 
                                         echo '
-                                            <form action="./particles/handleEditCategory.php?action=update" method="post">
+                                            <form action="./particles/handleEditCategory.php?action=update&&cID=' . $categoryID . '" method="post">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <div class="review-content-section">
