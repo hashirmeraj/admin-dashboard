@@ -90,7 +90,10 @@ if (isset($_GET['add']) && $_GET['add'] == "true") {
                             </ul>
                             <div id="myTabContent" class="tab-content custom-product-edit">
                                 <div class="product-tab-list tab-pane fade active in" id="description">
-                                    <form action="./particles/handleCategory.php" method="post">
+                                    <?php
+                                    if (isset($_GET['action']) && $_GET['action'] == 'edit') {
+                                        echo '
+                                            <form action="./particles/handleEditCategory.php?action=edit" method="post">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <div class="review-content-section">
@@ -132,6 +135,54 @@ if (isset($_GET['add']) && $_GET['add'] == "true") {
                                             </div>
                                         </div>
                                     </form>
+                                        ';
+                                    } else {
+                                        echo '
+                                            <form action="./particles/handleCategory.php" method="post">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <div class="review-content-section">
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="icon hashir-unlocked" aria-hidden="true"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Category Code" name="categoryCode" required>
+                                                    </div>
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="icon hashir-new-file" aria-hidden="true"></i></span>
+                                                        <input type="number" class="form-control" placeholder="Total Questions" name="totalQuestions" required>
+                                                    </div>
+                                                    <select name="status" class="form-control pro-edt-select form-control-primary mg-b-pro-edt" required>
+                                                        <option value="active">Select Status</option>
+                                                        <option value="active">Active</option>
+                                                        <option value="paused">Paused</option>
+                                                        <option value="disabled">Disabled</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <div class="review-content-section">
+                                                    <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="icon hashir-new-file" aria-hidden="true"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Category Name" name="categoryName" required>
+                                                    </div>
+                                                    <div class="input-group mg-b-pro-edt col-lg-12">
+                                                        <span class="input-group-addon"><i class="icon hashir-new-file" aria-hidden="true"></i></span>
+                                                        <input type="number" class="form-control" placeholder="Total Minutes" name="totalMinutes" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="text-center custom-pro-edt-ds">
+                                                    <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Save</button>
+                                                    <button type="reset" class="btn btn-ctl-bt waves-effect waves-light">Discard</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                        ';
+                                    }
+                                    ?>
                                 </div>
                                 <div class="product-tab-list tab-pane fade" id="INFORMATION">
                                     <form action="./particles/handleQuestions.php" method="post">

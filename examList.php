@@ -104,10 +104,10 @@ include './particles/init.php';
                             <td>' . $row['category_question'] . '</td>
                             <td>' . $row['category_time'] . '</td>
                             <td>
-                              <a href="./particles/handleEditCategory.php?action=edit" style="color:white;">
+                              <a href="./addExam.php?action=edit" style="color:white;">
                                 <button hr data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                               </a>
-                              <a href="./particles/handleEditCategory.php?action=edit" style="color:white;">
+                              <a href="./particles/handleEditCategory.php?action=delete" style="color:white;">
                                 <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                               </a>
                             </td>
