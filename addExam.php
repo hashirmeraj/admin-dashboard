@@ -91,8 +91,9 @@ if (isset($_GET['add']) && $_GET['add'] == "true") {
                             <div id="myTabContent" class="tab-content custom-product-edit">
                                 <div class="product-tab-list tab-pane fade active in" id="description">
                                     <?php
-                                    $categoryID = $_GET['cID'];
+
                                     if (isset($_GET['action']) && $_GET['action'] == 'edit') {
+                                        $categoryID = $_GET['cID'];
                                         $sql = "SELECT * FROM `categories` WHERE `category_id` = '$categoryID'";
                                         $result = mysqli_query($conn, $sql);
                                         $row = mysqli_fetch_assoc($result);

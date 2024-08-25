@@ -25,12 +25,23 @@ if (isset($_GET['action']) && $_GET['action'] == 'update') {
 
         $result = mysqli_query($conn, $sql);
         if ($result) {
-            echo 'Update Yes' . $adminID;
+            header("Location:../addExam.php?update=success");
+            exit();
         } else {
-            echo 'Update no';
+            header("Location:../addExam.php?update=failed");
+            exit();
         }
     }
 } elseif (isset($_GET['action']) && $_GET['action'] == 'delete') {
     $sql = "DELETE FROM `categories` WHERE `category_id` = '$categoryID'";
     $result = mysqli_query($conn, $sql);
+    if ($result) {
+        header("Location:../examList.php?update=delete");
+        exit();
+    } else {
+        header("Location:../examList.php?update=deletefailed");
+        exit();
+    }
 }
+header("Location:../addExam.php");
+exit();
