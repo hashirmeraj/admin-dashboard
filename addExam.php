@@ -83,25 +83,27 @@ if (isset($_GET['add']) && $_GET['add'] == "true") {
                             }
                             ?>
 
-                            <ul id="myTab3" class="tab-review-design">
-                                <li class="active"><a href="#description"><i class="icon hashir-edit" aria-hidden="true"></i> Product Edit</a></li>
-                                <li><a href="#INFORMATION"><i class="icon hashir-chat" aria-hidden="true"></i> Review</a></li>
-                                <li><a href="#reviews"><i class="icon hashir-picture" aria-hidden="true"></i> Pictures</a></li>
-                            </ul>
-                            <div id="myTabContent" class="tab-content custom-product-edit">
-                                <div class="product-tab-list tab-pane fade active in" id="description">
-                                    <?php
 
-                                    if (isset($_GET['action']) && $_GET['action'] == 'edit') {
-                                        $categoryID = $_GET['cID'];
-                                        $sql = "SELECT * FROM `categories` WHERE `category_id` = '$categoryID'";
-                                        $result = mysqli_query($conn, $sql);
-                                        $row = mysqli_fetch_assoc($result);
+                            <?php
+
+                            if (isset($_GET['action']) && $_GET['action'] == 'edit') {
+                                $categoryID = $_GET['cID'];
+                                $sql = "SELECT * FROM `categories` WHERE `category_id` = '$categoryID'";
+                                $result = mysqli_query($conn, $sql);
+                                $row = mysqli_fetch_assoc($result);
 
 
-                                        echo '
-                                            <form action="./particles/handleEditCategory.php?action=update&&cID=' . $categoryID . '" method="post">
-                                        <div class="row">
+
+                                echo '
+                                        <ul id="myTab3" class="tab-review-design">
+                                            <li class="active"><a href="#description"><i class="icon hashir-edit" aria-hidden="true"></i> Update Category</a></li>
+                                            <li><a href="#INFORMATION"><i class="icon hashir-chat" aria-hidden="true"></i> Review</a></li>
+                                            <li><a href="#reviews"><i class="icon hashir-picture" aria-hidden="true"></i> Pictures</a></li>
+                                        </ul>
+                                        <div id="myTabContent" class="tab-content custom-product-edit">
+                                            <div class="product-tab-list tab-pane fade active in" id="description">
+                                                <form action="./particles/handleEditCategory.php?action=update&&cID=' . $categoryID . '" method="post">
+                                            <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <div class="review-content-section">
                                                     <div class="input-group mg-b-pro-edt">
@@ -143,8 +145,15 @@ if (isset($_GET['add']) && $_GET['add'] == "true") {
                                         </div>
                                     </form>
                                         ';
-                                    } else {
-                                        echo '
+                            } else {
+                                echo '
+                                <ul id="myTab3" class="tab-review-design">
+                                    <li class="active"><a href="#description"><i class="icon hashir-edit" aria-hidden="true"></i> Product Edit</a></li>
+                                    <li><a href="#INFORMATION"><i class="icon hashir-chat" aria-hidden="true"></i> Review</a></li>
+                                    <li><a href="#reviews"><i class="icon hashir-picture" aria-hidden="true"></i> Pictures</a></li>
+                                </ul>
+                            <div id="myTabContent" class="tab-content custom-product-edit">
+                                <div class="product-tab-list tab-pane fade active in" id="description">
                                             <form action="./particles/handleCategory.php" method="post">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -188,81 +197,81 @@ if (isset($_GET['add']) && $_GET['add'] == "true") {
                                         </div>
                                     </form>
                                         ';
-                                    }
-                                    ?>
-                                </div>
-                                <div class="product-tab-list tab-pane fade" id="INFORMATION">
-                                    <form action="./particles/handleQuestions.php" method="post">
-                                        <div class="row">
-
-                                            <div class="form-group col-lg-6">
-                                                <div class="input-group  col-lg-12">
-                                                    <span class="input-group-addon"><i class="icon hashir-unlocked" aria-hidden="true"></i></span>
-                                                    <input class="form-control" type="text" placeholder="Category Code" name="categoryCode" required>
-                                                </div>
-
-                                            </div>
-                                            <div class="form-group col-lg-12">
-                                                <div class="input-group  col-lg-12">
-                                                    <span class="input-group-addon"><i class="icon hashir-unlocked" aria-hidden="true"></i></span>
-                                                    <input class="form-control" type="text" placeholder="Add Question" name="categoryQuestion" required>
-                                                </div>
-
-                                            </div>
-                                            <div class="form-group col-lg-12">
-                                                <div class="input-group  col-lg-12">
-                                                    <span class="input-group-addon"><i class="icon hashir-tick" aria-hidden="true"></i></span>
-                                                    <input type="text" class="form-control" placeholder="First Option" name="firstOption" required>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-12">
-                                                <div class="input-group  col-lg-12">
-                                                    <span class="input-group-addon"><i class="icon hashir-tick" aria-hidden="true"></i></span>
-                                                    <input type="text" class="form-control" placeholder="Second Option" name="secondOption" required>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-12">
-                                                <div class="input-group  col-lg-12">
-                                                    <span class="input-group-addon"><i class="icon hashir-tick" aria-hidden="true"></i></span>
-                                                    <input type="text" class="form-control" placeholder="Third Option" name="thirdOption">
-
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-12">
-                                                <div class="input-group  col-lg-12">
-                                                    <span class="input-group-addon"><i class="icon hashir-tick" aria-hidden="true"></i></span>
-                                                    <input type="text" class="form-control" placeholder="Fourth Option" name="fourthOption">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-12">
-                                                <div class="input-group  col-lg-12">
-                                                    <span class="input-group-addon"><i class="icon hashir-down-arrow" aria-hidden="true"></i></span>
-
-                                                    <select name="correctOptions" class="form-control pro-edt-select form-control-primary mg-b-pro-edt" required>
-                                                        <option value="first">Select Correct Option</option>
-                                                        <option value="first">First Option</option>
-                                                        <option value="second">Second Option</option>
-                                                        <option value="third">Third Option</option>
-                                                        <option value="fourth">Fourth Option</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class=" review-pro-edt">
-                                            <button type="submit" class="btn btn-ctl-bt waves-effect waves-light">Submit
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-
+                            }
+                            ?>
                         </div>
+                        <div class="product-tab-list tab-pane fade" id="INFORMATION">
+                            <form action="./particles/handleQuestions.php" method="post">
+                                <div class="row">
 
+                                    <div class="form-group col-lg-6">
+                                        <div class="input-group  col-lg-12">
+                                            <span class="input-group-addon"><i class="icon hashir-unlocked" aria-hidden="true"></i></span>
+                                            <input class="form-control" type="text" placeholder="Category Code" name="categoryCode" required>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        <div class="input-group  col-lg-12">
+                                            <span class="input-group-addon"><i class="icon hashir-unlocked" aria-hidden="true"></i></span>
+                                            <input class="form-control" type="text" placeholder="Add Question" name="categoryQuestion" required>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        <div class="input-group  col-lg-12">
+                                            <span class="input-group-addon"><i class="icon hashir-tick" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" placeholder="First Option" name="firstOption" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        <div class="input-group  col-lg-12">
+                                            <span class="input-group-addon"><i class="icon hashir-tick" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" placeholder="Second Option" name="secondOption" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        <div class="input-group  col-lg-12">
+                                            <span class="input-group-addon"><i class="icon hashir-tick" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" placeholder="Third Option" name="thirdOption">
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        <div class="input-group  col-lg-12">
+                                            <span class="input-group-addon"><i class="icon hashir-tick" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" placeholder="Fourth Option" name="fourthOption">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        <div class="input-group  col-lg-12">
+                                            <span class="input-group-addon"><i class="icon hashir-down-arrow" aria-hidden="true"></i></span>
+
+                                            <select name="correctOptions" class="form-control pro-edt-select form-control-primary mg-b-pro-edt" required>
+                                                <option value="first">Select Correct Option</option>
+                                                <option value="first">First Option</option>
+                                                <option value="second">Second Option</option>
+                                                <option value="third">Third Option</option>
+                                                <option value="fourth">Fourth Option</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class=" review-pro-edt">
+                                    <button type="submit" class="btn btn-ctl-bt waves-effect waves-light">Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
+
                 </div>
+
             </div>
         </div>
+    </div>
+    </div>
     </div>
     <!-- JS files -->
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
