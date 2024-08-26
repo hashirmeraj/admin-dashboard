@@ -50,74 +50,58 @@ include './particles/init.php';
                 <div class="row" style="margin-top: 13vh;">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
-                            <h4>Categories</h4>
+                            <h4>Questions</h4>
                             <div class="add-product">
-                                <a href="./addExam.php">Add Category</a>
+                                <a href="./addExam.php">Add Questions</a>
                             </div>
                             <table>
                                 <tr>
                                     <th>Sno.</th>
                                     <th>Category Code</th>
-                                    <th>Category Name</th>
-                                    <th>Status</th>
-                                    <th>Total Questions</th>
-                                    <th>Total Minutes</th>
-                                    <th>Questions List</th>
+                                    <th>Question</th>
                                     <th>Setting</th>
                                 </tr>
 
                                 <?php
                                 // Pagination logic
+                                $cId = $_GET['cID'];
                                 $items_per_page = 5; // Number of items per page
                                 $current_page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
                                 $offset = ($current_page - 1) * $items_per_page;
 
                                 // Fetch total number of categories
-                                $total_sql = "SELECT COUNT(*) FROM `categories`";
+                                $total_sql = "SELECT COUNT(*) FROM `category_questions` WHERE `categoryId` = '$cId'";
                                 $total_result = mysqli_query($conn, $total_sql);
                                 $total_categories = mysqli_fetch_array($total_result)[0];
                                 $total_pages = ceil($total_categories / $items_per_page);
 
                                 // Fetch categories for the current page
-                                $sql = "SELECT * FROM `categories` LIMIT $items_per_page OFFSET $offset";
+                                $sql = "SELECT * FROM `category_questions` WHERE `categoryId` = '$cId' LIMIT $items_per_page OFFSET $offset";
                                 $result = mysqli_query($conn, $sql);
                                 if ($result) {
                                     $sno = $offset;
                                     while ($row = mysqli_fetch_assoc($result)) {
+                                        $question = $row['questionCategory'];
+                                        if (strlen($question) > 120) {
+                                            // Truncate the string and add ellipsis
+                                            $question = substr($question, 0, 120) . '...';
+                                        }
                                         $sno++;
-                                        $categoryID = $row['category_id'];
+                                        $questionId  = $row['questionId'];
                                         echo '
                       <tr>
                       <td>' . $sno . '</td>
-                      <td>' . $row['category_code'] . '</td>
-                      <td>' . $row['category_name'] . '</td>';
-
-                                        //For Checking status 
-
-                                        if ($row['category_status'] == "active") {
-                                            echo '<td><button class="pd-setting">Active</button></td>';
-                                        } elseif ($row['category_status'] == "paused") {
-                                            echo '<td><button class="ps-setting">Paused</button></td>';
-                                        } elseif ($row['category_status'] == "disabled") {
-                                            echo '<td><button class="ds-setting">Disabled</button></td>';
-                                        }
-                                        echo '
-                            
-                            <td>' . $row['category_question'] . '</td>
-                            <td>' . $row['category_time'] . '</td>
-                            <td>
-                              <a href="./addExam.php?action=edit&&cID=' . $categoryID . '" style="color:white;">
-                              <button hr data-toggle="tooltip" title="See Questions" class="pd-setting-ed"><i class="fa fa-bars" aria-hidden="true"></i></button>
-                              </a>
-                            </td>
-                            <td>
-                              <a href="./addExam.php?action=edit&&cID=' . $categoryID . '" style="color:white;">
-                                <button hr data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                              </a>
-                              <a href="./particles/handleEditCategory.php?action=delete&&cID=' . $categoryID . '" style="color:white;">
-                                <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                              </a>
-                            </td>
+                      <td>' . $row['categoryCode'] . '</td>
+                          
+                        <td>' . $question . '</td>
+                        <td>
+                          <a href="./addExam.php?questionAction=edit&&qCid=' . $questionId . '" style="color:white;">
+                            <button hr data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                          </a>
+                          <a href="./particles/handleEditQuestion.php?action=delete&&cID=' . $questionId . '" style="color:white;">
+                            <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                          </a>
+                        </td>
                         </tr>';
                                     }
                                 }
