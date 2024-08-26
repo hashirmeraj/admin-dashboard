@@ -49,7 +49,7 @@ This repository contains the source code for an Admin Dashboard for managing an 
      ```php
      <?php
      // Database configuration
-     $servername = 'localhost:3307'; // Server name, including port if not the default (3306)
+     $servername = 'localhost; // Server name, including port if not the default (3306)
      $username = 'root'; // MySQL username
      $password = ''; // MySQL password (empty if not set)
      $dbname = 'admin_dashboard'; // Name of the database to connect to
