@@ -62,6 +62,7 @@ include './particles/init.php';
                   <th>Status</th>
                   <th>Total Questions</th>
                   <th>Total Minutes</th>
+                  <th>Questions List</th>
                   <th>Setting</th>
                 </tr>
 
@@ -104,6 +105,11 @@ include './particles/init.php';
                             
                             <td>' . $row['category_question'] . '</td>
                             <td>' . $row['category_time'] . '</td>
+                            <td>
+                              <a href="./questionsList.php?cID=' . $categoryID . '" style="color:white;">
+                              <button hr data-toggle="tooltip" title="See Questions" class="pd-setting-ed"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                              </a>
+                            </td>
                             <td>
                               <a href="./addExam.php?action=edit&&cID=' . $categoryID . '" style="color:white;">
                                 <button hr data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>

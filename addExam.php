@@ -98,7 +98,8 @@ if (isset($_GET['add']) && $_GET['add'] == "true") {
                                         <ul id="myTab3" class="tab-review-design">
                                             <li class="active"><a href="#description"><i class="icon hashir-edit" aria-hidden="true"></i> Update Category</a></li>
                                             <li><a href="#INFORMATION"><i class="icon hashir-chat" aria-hidden="true"></i> Review</a></li>
-                                            <li><a href="#reviews"><i class="icon hashir-picture" aria-hidden="true"></i> Pictures</a></li>
+                                            
+                                            
                                         </ul>
                                         <div id="myTabContent" class="tab-content custom-product-edit">
                                             <div class="product-tab-list tab-pane fade active in" id="description">
