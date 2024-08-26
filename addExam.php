@@ -97,9 +97,7 @@ if (isset($_GET['add']) && $_GET['add'] == "true") {
                                 echo '
                                         <ul id="myTab3" class="tab-review-design">
                                             <li class="active"><a href="#description"><i class="icon hashir-edit" aria-hidden="true"></i> Update Category</a></li>
-                                            <li><a href="#INFORMATION"><i class="icon hashir-chat" aria-hidden="true"></i> Review</a></li>
-                                            
-                                            
+                                                                                        
                                         </ul>
                                         <div id="myTabContent" class="tab-content custom-product-edit">
                                             <div class="product-tab-list tab-pane fade active in" id="description">
@@ -146,12 +144,94 @@ if (isset($_GET['add']) && $_GET['add'] == "true") {
                                         </div>
                                     </form>
                                         ';
+                            } elseif (isset($_GET['questionAction']) && $_GET['questionAction'] == 'edit') {
+
+                                $questionID = $_GET['qCid'];
+                                $sql = "SELECT * FROM `category_questions` WHERE `questionId` = '$questionID'";
+                                $result = mysqli_query($conn, $sql);
+                                $row = mysqli_fetch_assoc($result);
+
+
+                                echo '
+                                <ul id="myTab3" class="tab-review-design">
+                                    
+                                    <li class="active"><a href="#INFORMATION"><i class="icon hashir-chat" aria-hidden="true"></i> Update Question</a></li>
+                                    
+                                </ul>
+                            <div id="myTabContent" class="tab-content custom-product-edit">
+                                
+                        <div class="product-tab-list tab-pane fade active in" id="INFORMATION">
+                            <form action="./particles/handleEditQuestion.php?action=update&&cID=' . $questionID . '" method="post">
+                                <div class="row">
+
+                                    <div class="form-group col-lg-6">
+                                        <div class="input-group  col-lg-12">
+                                            <span class="input-group-addon"><i class="icon hashir-unlocked" aria-hidden="true"></i></span>
+                                            <input class="form-control" type="text" placeholder="Category Code" name="categoryCode" required value="' . $row['categoryCode'] . '">
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        <div class="input-group  col-lg-12">
+                                            <span class="input-group-addon"><i class="icon hashir-unlocked" aria-hidden="true"></i></span>
+                                            <input class="form-control" type="text" placeholder="Add Question" name="categoryQuestion" required value="' . $row['questionCategory'] . '">
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        <div class="input-group  col-lg-12">
+                                            <span class="input-group-addon"><i class="icon hashir-tick" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" placeholder="First Option" name="firstOption" required value="' . $row['firstOption'] . '">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        <div class="input-group  col-lg-12">
+                                            <span class="input-group-addon"><i class="icon hashir-tick" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" placeholder="Second Option" name="secondOption" required value="' . $row['secondOption'] . '">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        <div class="input-group  col-lg-12">
+                                            <span class="input-group-addon"><i class="icon hashir-tick" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" placeholder="Third Option" name="thirdOption" value="' . $row['thirdOption'] . '">
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        <div class="input-group  col-lg-12">
+                                            <span class="input-group-addon"><i class="icon hashir-tick" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" placeholder="Fourth Option" name="fourthOption" value="' . $row['fourthOption'] . '">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        <div class="input-group  col-lg-12">
+                                            <span class="input-group-addon"><i class="icon hashir-down-arrow" aria-hidden="true"></i></span>
+
+                                            <select name="correctOptions" class="form-control pro-edt-select form-control-primary mg-b-pro-edt" required>
+                                                <option value="first">Select Correct Option</option>
+                                                <option value="first">First Option</option>
+                                                <option value="second">Second Option</option>
+                                                <option value="third">Third Option</option>
+                                                <option value="fourth">Fourth Option</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class=" review-pro-edt">
+                                    <button type="submit" class="btn btn-ctl-bt waves-effect waves-light">Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                                        ';
                             } else {
                                 echo '
                                 <ul id="myTab3" class="tab-review-design">
                                     <li class="active"><a href="#description"><i class="icon hashir-edit" aria-hidden="true"></i> Product Edit</a></li>
                                     <li><a href="#INFORMATION"><i class="icon hashir-chat" aria-hidden="true"></i> Review</a></li>
-                                    <li><a href="#reviews"><i class="icon hashir-picture" aria-hidden="true"></i> Pictures</a></li>
+                                    
                                 </ul>
                             <div id="myTabContent" class="tab-content custom-product-edit">
                                 <div class="product-tab-list tab-pane fade active in" id="description">
@@ -197,10 +277,8 @@ if (isset($_GET['add']) && $_GET['add'] == "true") {
                                             </div>
                                         </div>
                                     </form>
-                                        ';
-                            }
-                            ?>
-                        </div>
+                                    
+                                    </div>
                         <div class="product-tab-list tab-pane fade" id="INFORMATION">
                             <form action="./particles/handleQuestions.php" method="post">
                                 <div class="row">
@@ -265,13 +343,18 @@ if (isset($_GET['add']) && $_GET['add'] == "true") {
                                 </div>
                             </form>
                         </div>
+
+                                        ';
+                            }
+                            ?>
+
+                        </div>
+
                     </div>
 
                 </div>
-
             </div>
         </div>
-    </div>
     </div>
     </div>
     <!-- JS files -->
