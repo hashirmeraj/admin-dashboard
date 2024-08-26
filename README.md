@@ -49,18 +49,10 @@ This repository contains the source code for an Admin Dashboard for managing an 
      ```php
      <?php
      // Database configuration
-     define('DB_SERVER', 'localhost');
-     define('DB_USERNAME', 'root');
-     define('DB_PASSWORD', '');
-     define('DB_DATABASE', 'admin_dashboard');
-
-     // Create database connection
-     $conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
-
-     // Check connection
-     if (!$conn) {
-         die("Connection failed: " . mysqli_connect_error());
-     }
+     $servername = 'localhost:3307'; // Server name, including port if not the default (3306)
+     $username = 'root'; // MySQL username
+     $password = ''; // MySQL password (empty if not set)
+     $dbname = 'admin_dashboard'; // Name of the database to connect to
      ?>
      ```
 
