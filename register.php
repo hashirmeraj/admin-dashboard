@@ -151,10 +151,7 @@ if (isset($_GET['singupsuccess']) && $_GET['singupsuccess'] == 'true') {
     </div>
   </div>
 
-  <?php
-  // Include footer
-  include './particles/footer.php';
-  ?>
+
 
   <!-- JavaScript Files -->
   <script src="js/vendor/jquery-1.11.3.min.js"></script>

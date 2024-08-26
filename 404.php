@@ -1,10 +1,12 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<?php
+echo '
+    <!doctype html>
+<html class="no-js" lang="">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Password Recevery | hashir - Material Admin Template</title>
+  <title>404 Page | hashir - Material Admin Template</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- favicon
@@ -47,9 +49,6 @@
 		============================================ -->
   <link rel="stylesheet" href="css/calendar/fullcalendar.min.css">
   <link rel="stylesheet" href="css/calendar/fullcalendar.print.min.css">
-  <!-- forms CSS
-		============================================ -->
-  <link rel="stylesheet" href="css/form/all-type-forms.css">
   <!-- style CSS
 		============================================ -->
   <link rel="stylesheet" href="style.css">
@@ -65,50 +64,37 @@
   <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
   <div class="color-line"></div>
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="back-link back-backend">
-          <a href="index.html" class="btn btn-primary">Back to Dashboard</a>
+          <a href="./index.php" class="btn btn-primary">Back to Dashboard</a>
         </div>
       </div>
     </div>
   </div>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
-      <div class="col-md-4 col-md-4 col-sm-4 col-xs-12">
-        <div class="text-center ps-recovered">
-          <h3>PASSWORD RECOVER</h3>
-          <p>Please fill the form to recover your password</p>
-        </div>
-        <div class="hpanel">
-          <div class="panel-body poss-recover">
-            <p>
-              Enter your email address and your password will be reset and emailed to you.
-            </p>
-            <form action="#" id="loginForm">
-              <div class="form-group">
-                <label class="control-label" for="username">Email</label>
-                <input type="text" placeholder="example@gmail.com" title="Please enter you email adress" required=""
-                  value="" name="username" id="username" class="form-control">
-                <span class="help-block small">Your registered email address</span>
-              </div>
-
-              <button class="btn btn-success btn-block">Reset password</button>
-            </form>
-          </div>
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
+      <div class="col-md-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="content-error">
+          <h1>ERROR <span class="counter"> 404</span></h1>
+          <p>Sorry, but the page you are looking for has note been found. Try checking the URL for error, then hit the
+            refresh button on your browser or try found something else in our app.</p>
+          <a href="#">Report Problem</a>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
     </div>
     <div class="row">
       <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 text-center login-footer">
-        <p>Copyright © 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
+        <p>Copyright © Admin Dashboard All rights reserved.</p>
       </div>
     </div>
   </div>
+
   <!-- jquery
 		============================================ -->
   <script src="js/vendor/jquery-1.11.3.min.js"></script>
@@ -137,17 +123,27 @@
 		============================================ -->
   <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
   <script src="js/scrollbar/mCustomScrollbar-active.js"></script>
+  <!-- counterup JS
+		============================================ -->
+  <script src="js/counterup/jquery.counterup.min.js"></script>
+  <script src="js/counterup/waypoints.min.js"></script>
+  <script src="js/counterup/counterup-active.js"></script>
   <!-- metisMenu JS
 		============================================ -->
   <script src="js/metisMenu/metisMenu.min.js"></script>
   <script src="js/metisMenu/metisMenu-active.js"></script>
+  <!-- morrisjs JS
+		============================================ -->
+  <script src="js/sparkline/jquery.sparkline.min.js"></script>
+  <script src="js/sparkline/jquery.charts-sparkline.js"></script>
+  <!-- calendar JS
+		============================================ -->
+  <script src="js/calendar/moment.min.js"></script>
+  <script src="js/calendar/fullcalendar.min.js"></script>
+  <script src="js/calendar/fullcalendar-active.js"></script>
   <!-- tab JS
 		============================================ -->
   <script src="js/tab.js"></script>
-  <!-- icheck JS
-		============================================ -->
-  <script src="js/icheck/icheck.min.js"></script>
-  <script src="js/icheck/icheck-active.js"></script>
   <!-- plugins JS
 		============================================ -->
   <script src="js/plugins.js"></script>
@@ -157,3 +153,4 @@
 </body>
 
 </html>
+  ';

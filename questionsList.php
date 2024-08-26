@@ -128,9 +128,7 @@ include './particles/init.php';
                 </div>
             </div>
         </div>
-        <?php
-        include './particles/footer.php';
-        ?>
+        
     </div>
 
     <!-- JS files -->

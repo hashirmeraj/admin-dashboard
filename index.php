@@ -198,10 +198,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 </div>
             </div>
         </div>
-        <!-- footer -->
-        <?php
-        include './particles/footer.php';
-        ?>
 
         <!-- jquery
 		============================================ -->

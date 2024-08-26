@@ -25,7 +25,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'update') {
 
         $result = mysqli_query($conn, $sql);
         if ($result) {
-            header("Location:../addExam.php?update=success");
+            header("Location:../addExam.php?update=true");
             exit();
         } else {
             header("Location:../addExam.php?update=failed");

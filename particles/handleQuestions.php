@@ -32,3 +32,4 @@ if ($method == 'POST') {
     }
 }
 header("Location:../addExam.php?add=false&error=" . urlencode($existError));
+exit();

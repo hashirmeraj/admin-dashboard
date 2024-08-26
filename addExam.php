@@ -1,6 +1,11 @@
 <?php
 $addQuestion = false;
 $errorQuestion = false;
+$addCat = false;
+$addCatError = false;
+$updtCat = false;
+$deleteCat = false;
+$updtCatError = false;
 include './particles/init.php';
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 } else {
@@ -12,6 +17,18 @@ if (isset($_GET['add']) && $_GET['add'] == "true") {
     $addQuestion = true;
 } elseif (isset($_GET['add']) && $_GET['add'] == "false") {
     $errorQuestion = true;
+}
+if (isset($_GET['addCat']) && $_GET['addCat'] == "true") {
+    $addCat = true;
+} elseif (isset($_GET['addCat']) && $_GET['addCat'] == "false") {
+    $addCatError = true;
+}
+if (isset($_GET['update']) && $_GET['update'] == "true") {
+    $updtCat = true;
+} elseif (isset($_GET['update']) && $_GET['update'] == "delete") {
+    $deleteCat = true;
+} elseif (isset($_GET['update']) && $_GET['update'] == "false") {
+    $updtCatError = true;
 }
 ?>
 <!doctype html>
@@ -78,6 +95,41 @@ if (isset($_GET['add']) && $_GET['add'] == "true") {
                                 <div class="container-fluid" >
                                 <span style="font-size: 1.1rem; color:darkred;">
                                 The selected category is invalid. Please enter a valid category and try again.
+                                </span>
+                                </div>';
+                            } elseif ($addCat) {
+                                echo '
+                                <div class="container-fluid" >
+                                <span style="font-size: 1.1rem; color:darkgreen;">
+                                Your category has been added successfully!
+                                </span>
+                                </div>';
+                            } elseif ($addCatError) {
+                                echo '
+                                <div class="container-fluid" >
+                                <span style="font-size: 1.1rem; color:darkred;">
+                                Category already exists. Please choose a different code and try again.
+                                </span>
+                                </div>';
+                            } elseif ($updtCat) {
+                                echo '
+                                <div class="container-fluid" >
+                                <span style="font-size: 1.1rem; color:darkgreen;">
+                                The category has been successfully updated!
+                                </span>
+                                </div>';
+                            } elseif ($updtCatError) {
+                                echo '
+                                <div class="container-fluid" >
+                                <span style="font-size: 1.1rem; color:darkred;">
+                                An error occurred while updating the category. Please try again.
+                                </span>
+                                </div>';
+                            } elseif ($deleteCat) {
+                                echo '
+                                <div class="container-fluid" >
+                                <span style="font-size: 1.1rem; color:darkgreen;">
+                                The category has been successfully deleted!
                                 </span>
                                 </div>';
                             }
@@ -229,8 +281,8 @@ if (isset($_GET['add']) && $_GET['add'] == "true") {
                             } else {
                                 echo '
                                 <ul id="myTab3" class="tab-review-design">
-                                    <li class="active"><a href="#description"><i class="icon hashir-edit" aria-hidden="true"></i> Product Edit</a></li>
-                                    <li><a href="#INFORMATION"><i class="icon hashir-chat" aria-hidden="true"></i> Review</a></li>
+                                    <li class="active"><a href="#description"><i class="icon hashir-edit" aria-hidden="true"></i> Add Category</a></li>
+                                    <li><a href="#INFORMATION"><i class="icon hashir-edit" aria-hidden="true"></i> Add Question</a></li>
                                     
                                 </ul>
                             <div id="myTabContent" class="tab-content custom-product-edit">

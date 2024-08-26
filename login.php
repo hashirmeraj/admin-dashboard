@@ -123,10 +123,7 @@ if (isset($_GET['login']) && $_GET['login'] == 'false') {
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
     </div>
-    <?php
-    // Include footer
-    include './particles/footer.php';
-    ?>
+
     <!-- jQuery -->
     <script src="js/vendor/jquery-1.11.3.min.js"></script>
     <!-- Bootstrap JS -->
