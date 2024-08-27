@@ -74,35 +74,36 @@ echo '
                             <div class="mobile-menu">
                                 <nav id="dropdown">
                                     <ul class="mobile-menu-nav">
-                                        <li><a data-toggle="collapse" data-target="#Charts" href="#">Home <span
-                                                    class="admin-project-icon hashir-icon hashir-down-arrow"></span></a>
+                                        <li><a class="has-arrow" href="index.php">
+                                <i class="icon hashir-home icon-wrap"></i>
+                                <span class="mini-click-non">Dashboard</span>
+                            </a>
                                             <ul class="collapse dropdown-header-top">
-                                                <li><a href="index.html">Dashboard v.1</a></li>
-                                                <li><a href="index-1.html">Dashboard v.2</a></li>
-                                                <li><a href="index-3.html">Dashboard v.3</a></li>
-                                                <li><a href="product-list.html">Product List</a></li>
-                                                <li><a href="product-edit.html">Product Edit</a></li>
-                                                <li><a href="product-detail.html">Product Detail</a></li>
-                                                <li><a href="product-cart.html">Product Cart</a></li>
-                                                <li><a href="product-payment.html">Product Payment</a></li>
-                                                <li><a href="analytics.html">Analytics</a></li>
-                                                <li><a href="widgets.html">Widgets</a></li>
+                                                <li class="active">
+                            <a class="has-arrow" href="index.php">
+                                <i class="icon hashir-home icon-wrap"></i>
+                                <span class="mini-click-non">Dashboard</span>
+                            </a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <li><a title="Dashboard v.1" href="index.php"><span class="mini-sub-pro">Home
+                                            </span></a></li>
+                                <li><a title="Product List" href="examList.php"><span class="mini-sub-pro">Test 
+                                        Category</span></a></li>
+                                <li><a title="Product Edit" href="./addExam.php"><span class="mini-sub-pro">Add 
+                                        Test Category</span></a></li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a  href="./particles/logout.php" aria-expanded="false"><i
+                                    class="icon hashir-unlocked icon-wrap"></i> <span
+                                    class="mini-click-non">Log out</span></a>
+                            
+                        </li>
                                             </ul>
                                         </li>
 
-                                        <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Setting <span
-                                                    class="admin-project-icon hashir-icon hashir-down-arrow"></span></a>
-                                            <ul id="Pagemob" class="collapse dropdown-header-top">
-                                                <li><a href="login.html">Login</a>
-                                                </li>
-                                                <li><a href="register.html">Register</a>
-                                                </li>
-                                                <li><a href="lock.html">Lock</a>
-                                                </li>
-                                                <li><a href="password-recovery.html">Password Recovery</a>
-                                                </li>
-                                            </ul>
-                                        </li>
+                                        
                                     </ul>
                                 </nav>
                             </div>
