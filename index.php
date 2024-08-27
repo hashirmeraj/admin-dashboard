@@ -25,7 +25,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <!-- Bootstrap CSS
 		============================================ -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -76,6 +76,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 </head>
 
 <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
 
     <!-- Php for side bar -->
     <?php
