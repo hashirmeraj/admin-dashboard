@@ -14,12 +14,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dashboard V.1 | hashir - Material Admin Template</title>
+    <title>Dashboard | Quiz Arcade</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="img/logosn2.png">
     <!-- Google Fonts
 		============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
@@ -108,7 +108,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                                             <p>Welcome <b> <?php
 
                                                             echo  $admin = $_SESSION['userName'];
-                                                            ?> </b> <span class="bread-ntd">Admin Dashboard</span></p>
+                                                            ?> </b> <span class="bread-ntd">to Admin Dashboard</span></p>
                                         </div>
                                     </div>
                                 </div>

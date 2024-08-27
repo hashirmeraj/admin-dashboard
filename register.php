@@ -26,7 +26,7 @@ if (isset($_GET['singupsuccess']) && $_GET['singupsuccess'] == 'true') {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Register | hashir - Material Admin Template</title>
+  <title>Register | Quiz Arcade</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
@@ -34,7 +34,7 @@ if (isset($_GET['singupsuccess']) && $_GET['singupsuccess'] == 'true') {
   <link rel="stylesheet" href="./css/bootstrap.min.css">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="shortcut icon" type="image/png" href="img/logosn2.png">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">

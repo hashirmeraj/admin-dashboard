@@ -23,12 +23,12 @@ if (isset($_GET['login']) && $_GET['login'] == 'false') {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Login hashir - Material Design</title> <!-- Combined and updated title -->
+  <title>Login | Quiz Arcade</title> <!-- Combined and updated title -->
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="shortcut icon" type="image/png" href="img/logosn2.png">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">

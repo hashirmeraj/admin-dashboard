@@ -3,19 +3,16 @@ echo '
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
-                <strong><img src="img/logo/logosn.png" alt="" /></strong>
+                <a href="index.html"><img class="main-logo" src="img/logo/logo2.png" alt="" /></a>
+                <strong><img src="img/logo/logosn2.png" alt="" /></strong>
             </div>
             <div class="hashir-profile">
-                <div class="profile-dtl">
-                    <a href="#"><img src="img/notification/4.jpg" alt="" /></a>
-                    <h2>Lakian <span class="min-dtn">Das</span></h2>
-                </div>
+                
                 <div class="profile-social-dtl">
                     <ul class="dtl-social">
-                        <li><a href="#"><i class="icon hashir-facebook"></i></a></li>
-                        <li><a href="#"><i class="icon hashir-twitter"></i></a></li>
-                        <li><a href="#"><i class="icon hashir-linkedin"></i></a></li>
+                        <li><a href="https://www.facebook.com/hashirmerajofficial/"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://github.com/hashirmeraj"><i class="fa fa-github"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/hashir-meraj-dev1/"><i class="fa fa-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -32,12 +29,8 @@ echo '
                                             </span></a></li>
                                 <li><a title="Product List" href="examList.php"><span class="mini-sub-pro">Test 
                                         Category</span></a></li>
-                                <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">Add 
+                                <li><a title="Product Edit" href="./addExam.php"><span class="mini-sub-pro">Add 
                                         Test Category</span></a></li>
-                                <li><a title="Product Detail" href="#"><span class="mini-sub-pro">Questions
-                                        List</span></a></li>
-                                <li><a title="Product Cart" href="product-cart.html"><span class="mini-sub-pro">Add
-                                        Questions</span></a></li>
                                 
                             </ul>
                         </li>

@@ -48,10 +48,7 @@ echo '
                                                     <ul role="menu"
                                                         class="dropdown-header-top author-log dropdown-menu animated zoomIn">
                                             
-                                                        <li><a href="#"><span
-                                                                    class="icon hashir-user author-log-ic"></span> My
-                                                                Profile</a>
-                                                        </li>
+                                                
                                                         
                                                         <li><a href="./particles/logout.php"><span
                                                                     class="icon hashir-unlocked author-log-ic"></span>
