@@ -7,6 +7,9 @@ var card = (function (modules) {
     }
     __webpack_require__.m = modules; __webpack_require__.c = installedModules; __webpack_require__.p = ""; return __webpack_require__(0);
 })
+
+
+    
     ([function (module, exports, __webpack_require__) {
         (function (global) {
             var Card, QJ, extend, payment, bind = function (fn, me) { return function () { return fn.apply(me, arguments); }; }; __webpack_require__(1); QJ = __webpack_require__(5); payment = __webpack_require__(6); extend = __webpack_require__(7); Card = (function () {
